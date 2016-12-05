@@ -1,0 +1,28 @@
+import java.util.*;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.kl.web.controller.BaseController;
+import org.kl.web.model.DataGrid;
+import org.kl.web.model.Json;
+import org.kl.web.model.Pager;
+import org.kl.web.model.Query;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import ${basepackage}.model.*;
+import ${basepackage}.dao.*;
+import ${basepackage}.service.*;
+
+/**
+ * @company 卡联科技
+ * @author wanjingjing
+ * @version 1.0
+ * @date 
+ */
+

@@ -1,0 +1,25 @@
+<#include "/macro.include"/>
+<#assign className = table.className>   
+<#assign classNameLower = className?uncap_first> 
+<#assign classNameLowerCase = table.classNameLowerCase> 
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>  
+	<!-- 别名 -->
+	<typeAliases>
+		<!-- 系统 Start-->
+		<typeAlias type="${basepackage}.model.elife.${classNameLowerCase}.${className}" alias="${className}" />
+		<typeAlias type="java.util.list" alias="list" />
+		<typeAlias type="java.util.Map" alias="map" />
+		<typeAlias type="java.lang.String" alias="string" />
+		<typeAlias type="java.lang.Integer" alias="int" />
+		<!-- 系统 End-->
+	</typeAliases>
+	<mappers>
+		<!-- 系统 Start-->
+		<mapper resource="${basepackage_dir}/dao/elife/${classNameLowerCase}/${className}.xml" />
+		<!-- 系统 End-->
+		
+	</mappers>
+</configuration>  

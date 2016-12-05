@@ -1,0 +1,125 @@
+<#include "/macro.include"/>
+<#assign className = table.className>   
+<#assign classNameFirstLower = table.classNameFirstLower>   
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<#macro mapperEl value>${r"#{"}${value}}</#macro>
+<#macro namespace>${className}.</#macro>
+<!-- 不使用namespace的话sql搜索定位会比较方便 -->
+<mapper namespace="${basepackage}.dao.I${className}Dao">
+	<sql id="Base_Column_List">
+		<#list table.columns as column>${column.underscoreName}<#if column_has_next>,</#if></#list>
+	</sql>
+	<sql id="Base_Column_insert">
+		 <#list table.columns as column>   
+        	${r"#{"}${column.underscoreName},jdbcType=${column.jdbcSqlTypeName}}<#if column_has_next>,</#if>
+        </#list>  
+	</sql>
+	<sql id="Base_query_column">
+		<#list table.columns as column>${column.underscoreName}<#if column_has_next>,</#if></#list>
+	</sql>
+	<sql id="Base_query_where">
+		 <#list table.notPkColumns as column>
+		 	<if test="${column.underscoreName} != null and ${column.underscoreName} != ''">
+	          and ${column.underscoreName} = <@mapperEl column.underscoreName/>
+	         </if>
+	      </#list>
+	</sql>
+	
+	<insert id="insert" parameterType="${basepackage}.model.${className}" keyProperty="${table.idColumn.underscoreName}" >
+        INSERT INTO ${table.sqlName} ( <include refid="Base_Column_List" /> )  VALUES (
+            <include refid="Base_Column_insert" /> 
+        )
+	</insert>
+	
+	<insert id="insertBatch" keyProperty="${table.idColumn.underscoreName}">
+		insert into ${table.sqlName}  ( <include refid="Base_Column_List" /> )   values
+		<foreach collection="array" item="item" index="index" separator=",">
+		   <include refid="Base_Column_insert" /> 
+        </foreach>
+	</insert>
+
+	<update id="update" parameterType="${basepackage}.model.${className}" flushCache="true">
+        UPDATE ${table.sqlName} SET
+	        <#list table.notPkColumns as column>
+	        ${column.underscoreName} = ${r"#{"}${column.underscoreName},jdbcType=${column.jdbcSqlTypeName}} <#if column_has_next>,</#if>
+	        </#list>
+        WHERE 
+        	<#list table.compositeIdColumns as column>
+	        ${column.underscoreName} = ${r"#{"}${column.underscoreName},jdbcType=${column.jdbcSqlTypeName}} <#if column_has_next>,</#if>
+	        </#list>	        
+	</update> 
+	
+	<update id="updateSelect" parameterType="${basepackage}.model.${className}" flushCache="true">
+        UPDATE ${table.sqlName} SET
+        	<#list table.compositeIdColumns as column>
+	        ${column.underscoreName} = ${r"#{"}${column.underscoreName},jdbcType=${column.jdbcSqlTypeName}} <#if column_has_next>,</#if>
+	        </#list>
+	        <#list table.notPkColumns as column>
+	        	<if test=" ${column.underscoreName}!= null  and ${column.underscoreName} != ''">
+	        		<#if column_has_next>,</#if> ${column.underscoreName} = ${r"#{"}${column.underscoreName},jdbcType=${column.jdbcSqlTypeName}} 
+	        	</if>
+	        </#list>
+        WHERE 
+        	<#list table.compositeIdColumns as column>
+	        ${column.underscoreName} = ${r"#{"}${column.underscoreName},jdbcType=${column.jdbcSqlTypeName}} <#if column_has_next>,</#if>
+	        </#list>	        
+	</update>
+	
+	<update id="updateBatch" flushCache="true">
+	    <foreach collection="array" item="item" open="begin" separator="" close="end;">
+		        UPDATE ${table.sqlName} SET
+			        <#list table.notPkColumns as column>
+			        ${column.underscoreName} = <@mapperEl column.underscoreName/> <#if column_has_next>,</#if>
+			        </#list>
+		        WHERE 
+		        	<#list table.compositeIdColumns as column>
+			        ${column.underscoreName} = <@mapperEl column.underscoreName/> <#if column_has_next>,</#if>
+			        </#list>	        
+		</foreach>
+	</update>
+
+	<delete id="delete" parameterType="string">
+	    delete from ${table.sqlName} where ${table.idColumn.underscoreName}=${r"#{"}${table.idColumn.underscoreName}}
+	</delete>
+	
+	<delete id="deleteBatch">
+	    delete from ${table.sqlName} where ${table.idColumn.underscoreName} in
+	    <foreach collection="array" item="item"  open="(" separator="," close=")">
+	        ${r"#{"}item}
+	    </foreach>
+	</delete>
+	
+	<select id="find" resultType="${basepackage}.model.${className}" parameterType="string">
+		select
+		<include refid="Base_query_column" />
+		from ${table.sqlName} where ${table.idColumn.underscoreName}= ${r"#{"}${table.idColumn.underscoreName}}
+	</select>
+
+	<select id="queryByCondition" resultType="${basepackage}.model.${className}" parameterType="java.util.Map">
+		select <include refid="Base_query_column" /> from ${table.sqlName} where 1=1
+		<include refid="Base_query_where" />
+		<if test="sqlWhere != null">
+			 ${r"#{"}sqlWhere}
+		</if>
+	</select>
+	
+	<select id="getRecordCount" resultType="int" parameterType="java.util.Map">
+		select count(1) from ${table.sqlName} where 1 = 1
+		<include refid="Base_query_where" />
+		<if test="sqlWhere != null">
+			 ${r"#{"}sqlWhere}
+		</if>
+	</select>
+	
+	<select id="select" resultType="${basepackage}.model.${className}" parameterType="java.util.Map">
+		select <include refid="Base_query_column" /> from ${table.sqlName} where 1=1
+		<include refid="Base_query_where" />
+		<if test="sqlWhere != null">
+			 ${r"#{"}sqlWhere}
+		</if>
+	</select>
+</mapper>

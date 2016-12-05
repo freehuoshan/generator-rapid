@@ -1,0 +1,83 @@
+<#include "/macro.include"/>
+<#assign className = table.className+"PO">
+<#assign namespaceName = table.className+"POMapper">   
+<#assign classNameLower = className?uncap_first> 
+<#assign classNameLowerCase = table.classNameLowerCase> 
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<#macro namespace>${basepackage}.model.${classNameLowerCase}.sqlmap.${className}</#macro>
+<mapper namespace="${namespaceName}">
+
+    <resultMap id="BaseResultMap" type="${className}">
+        <#list table.columns as column>
+        <result property="${column.columnNameLower}" column="${column.sqlName}"/>
+		</#list>
+    </resultMap>
+
+	<sql id="Base_Column_List">
+		<#list table.columns as column>${column.underscoreName}<#if column_has_next>,</#if></#list>
+	</sql>
+	
+	<insert id="insertSelective" parameterType="${className}" >
+		INSERT INTO ${table.sqlName} (
+			<#list table.pkColumns as column>
+				${column.sqlName}
+	        </#list>	        
+			<#list table.notPkColumns as column> 
+				<if test="${column.columnNameLower} != null  and  ${column.columnNameLower} != '' " > 
+					, ${column.sqlName}
+				</if>
+	        </#list>
+		 ) VALUES (
+			<#list table.pkColumns as column>
+				${r"#{"}${column.columnNameLower}${r"}"}
+	        </#list>		 
+			<#list table.notPkColumns as column> 
+				<if test="${column.columnNameLower} != null  and  ${column.columnNameLower} != '' " > 
+					, ${r"#{"}${column.columnNameLower}${r"}"}
+				</if>
+	        </#list>
+		 )
+	</insert>
+	
+	<update id="updateByKey" parameterType="${className}" flushCache="true">
+	 	UPDATE ${table.sqlName} SET
+			<#list table.pkColumns as column>
+				${column.sqlName} = ${r"#{"}${column.columnNameLower}${r"}"}
+	        </#list>	        
+			<#list table.notPkColumns as column> 
+				<if test="${column.columnNameLower} != null  and  ${column.columnNameLower} != '' " > 
+					, ${column.sqlName} = ${r"#{"}${column.columnNameLower}${r"}"}
+				</if>
+	        </#list>	 		
+	    WHERE 1 = 1
+			<#list table.pkColumns as column>
+				and ${column.sqlName} = ${r"#{"}${column.columnNameLower}${r"}"}
+	        </#list>
+	</update>
+
+	<select id="selectByCondition" resultMap="BaseResultMap" parameterType="${className}">
+		select 
+			<include refid="Base_Column_List" /> 
+		from ${table.sqlName}  
+		where 1 = 1
+			<#list table.columns as column>
+				<if test="${column.columnNameLower} != null  and  ${column.columnNameLower} != '' " > 
+					and ${column.sqlName} = ${r"#{"}${column.columnNameLower}${r"}"}
+				</if>
+	        </#list>
+	</select>
+	
+	<select id="selectCountByCondition" resultType="int" parameterType="${className}">
+		select count(1) 
+			from ${table.sqlName} 
+			where 1 = 1
+				<#list table.columns as column>
+					<if test="${column.columnNameLower} != null  and  ${column.columnNameLower} != '' " > 
+						and ${column.sqlName} = ${r"#{"}${column.columnNameLower}${r"}"}
+					</if>		        	
+		        </#list>
+	</select>	
+	
+</mapper>
+

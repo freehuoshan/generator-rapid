@@ -1,0 +1,87 @@
+<#include "/macro.include"/>
+<#assign className = table.className>   
+<#assign classNameLower = className?uncap_first> 
+<#assign classNameLowerCase = table.classNameLowerCase> 
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<#macro namespace>${basepackage}.model.${classNameLowerCase}.sqlmap.${className}</#macro>
+<mapper namespace="${className}">
+
+	<sql id="Base_Column_List">
+		<#list table.columns as column>${column.underscoreName}<#if column_has_next>,</#if></#list>
+	</sql>
+	
+	<update id="insert" parameterType="${basepackage}.model.${classNameLowerCase}.${className}" >
+		insert into ${table.underscoreName} (
+			<#list table.pkColumns as column>
+				${column.underscoreName}
+	        </#list>	        
+			<#list table.notPkColumns as column> 
+				<if test="${column.underscoreName} != null  and  ${column.underscoreName} != '' " > 
+					, ${column.underscoreName}
+				</if>
+	        </#list>
+		 ) values (
+			<#list table.pkColumns as column>
+				${r"#{"}${column.underscoreName}${r"}"}
+	        </#list>		 
+			<#list table.notPkColumns as column> 
+				<if test="${column.underscoreName} != null  and  ${column.underscoreName} != '' " > 
+					, ${r"#{"}${column.underscoreName}${r"}"}
+				</if>
+	        </#list>
+		 )
+	</update>
+	
+	<update id="update" parameterType="${basepackage}.model.${classNameLowerCase}.${className}" flushCache="true">
+	 	update ${table.underscoreName} set
+			<#list table.pkColumns as column>
+				${column.underscoreName} = ${r"#{"}${column.underscoreName}${r"}"}
+	        </#list>	        
+			<#list table.notPkColumns as column> 
+				<if test="${column.underscoreName} != null  and  ${column.underscoreName} != '' " > 
+					, ${column.underscoreName} = ${r"#{"}${column.underscoreName}${r"}"}
+				</if>
+	        </#list>	 		
+	    where 1 = 1
+			<#list table.pkColumns as column>
+				and ${column.underscoreName} = ${r"#{"}${column.underscoreName}${r"}"}
+	        </#list>
+	</update>
+	
+	<select id="queryByCondition" resultType="${basepackage}.model.${classNameLowerCase}.${className}" parameterType="${basepackage}.model.${classNameLowerCase}.${className}">
+		select 
+			<include refid="Base_Column_List" /> 
+		from ${table.underscoreName}  
+		where 1 = 1
+			<#list table.columns as column>
+				<if test="${column.underscoreName} != null  and  ${column.underscoreName} != '' " > 
+					and ${column.underscoreName} = ${r"#{"}${column.underscoreName}${r"}"}
+				</if>
+	        </#list>
+	</select>
+	
+	<select id="getCountByCondition" resultType="int" parameterType="${basepackage}.model.${classNameLowerCase}.${className}">
+		select count(1) 
+			from ${table.underscoreName} 
+			where 1 = 1
+				<#list table.columns as column>
+					<if test="${column.underscoreName} != null  and  ${column.underscoreName} != '' " > 
+						and ${column.underscoreName} = ${r"#{"}${column.underscoreName}${r"}"}
+					</if>		        	
+		        </#list>
+	</select>	
+	
+	<select id="selectByMap" resultType="${basepackage}.model.${classNameLowerCase}.${className}" parameterType="java.util.Map">
+		select 
+			<include refid="Base_Column_List" /> 
+		from ${table.underscoreName}  
+		where 1 = 1
+			<#list table.columns as column>
+				<if test="${column.underscoreName} != null  and  ${column.underscoreName} != '' " > 
+					and ${column.underscoreName} = ${r"#{"}${column.underscoreName}${r"}"}
+				</if>
+	        </#list>
+	</select>
+</mapper>
+
