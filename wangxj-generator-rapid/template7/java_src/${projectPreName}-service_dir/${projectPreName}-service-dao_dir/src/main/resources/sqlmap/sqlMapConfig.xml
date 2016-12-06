@@ -1,0 +1,17 @@
+<#include "/macro.include"/>
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>  
+	<!-- 别名 -->
+	<typeAliases>
+		<#list tables as table >
+		<typeAlias type="${basepackage}.po.${table.className}PO" alias="${table.className}PO" />
+		</#list>
+	</typeAliases>
+	<mappers>
+		<#list tables as table >
+		<mapper resource="sqlmap/${table.className}POMapper.xml" />
+		</#list>
+	</mappers>
+</configuration>  

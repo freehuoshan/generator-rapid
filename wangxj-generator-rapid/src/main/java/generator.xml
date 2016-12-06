@@ -6,8 +6,32 @@
 		1.会为所有的property生成property_dir属性,如pkg=com.company => pkg_dir=com/company
 		2.可以引用环境变量: ${env.JAVA_HOME} or System.properties: ${user.home},property之间也可以相互引用
 	</comment>
+	<!-- 自定义变量 -->
+	<entry key="author">wangxj</entry>
+	
+	<entry key="projectPreName">template</entry>
+	<entry key="projectGroupId">net.wangxj</entry>
 	
 	<entry key="basepackage">com.kalian.security.provide</entry>
+	<!-- dao层变量 -->
+	<entry key="databaseURLName">database_url</entry>
+	<entry key="databaseURLValue">database_url_value</entry>
+	
+	<entry key="databaseUSERName">database_user</entry>
+	<entry key="databaseUSERValue">database_user_value</entry>
+	
+	<entry key="databasePASSWORDName">database_passwd</entry>
+	<entry key="databasePASSWORDValue">database_passwd_value</entry>
+						
+	<entry key="databaseMAXACTIVEName">database_maxActive</entry>
+	<entry key="databaseMAXACTIVEValue">database_maxActive_value</entry>
+	
+	<entry key="databaseVALIDATEQUERYName">database_validateQuery</entry>
+	<entry key="databaseVALIDATEQUERYValue">database_validateQuery_value</entry>
+				 
+	<entry key="aopPOINTEXPRESSIONName">aop_point_expression</entry>
+	<entry key="aopPOINTEXPRESSIONValue">aop_point_expression_value</entry>
+
 	
 	<!-- jsp namespace: web/${namespace}/${className}/list.jsp -->
 	<entry key="namespace"></entry>
@@ -17,12 +41,12 @@
 	<!-- 需要移除的表名前缀,使用逗号进行分隔多个前缀,示例值: t_,v_ -->
 	<entry key="tableRemovePrefixes"></entry>
 	
-	<entry key="jdbc.username">tpos</entry>
-	<entry key="jdbc.password">tpos</entry>
+	<entry key="jdbc.username">root</entry>
+	<entry key="jdbc.password">llhua123</entry>
 <!-- 	oracle需要指定jdbc.schema,并且可能要大写，其它数据库忽略此项配置  -->
-	<entry key="jdbc.schema">TPOS</entry>
+	<!-- <entry key="jdbc.schema">TPOS</entry>
 	<entry key="jdbc.catalog">TPOS</entry>
-
+ -->
 <!-- 	<entry key="jdbc.username">ysh</entry> -->
 <!-- 	<entry key="jdbc.password">ysh</entry> -->
 <!-- 	<entry key="jdbc.schema">YSH</entry> -->
@@ -54,15 +78,15 @@
 	-->
 	 
 	<!-- Oracle		jdbc:oracle:oci:@tnsname_devdb -->
-	<entry key="jdbc.url">jdbc:oracle:thin:@111.1.1.235:1521:ora10g</entry>
-	<entry key="jdbc.driver">oracle.jdbc.driver.OracleDriver</entry>
+	<!-- <entry key="jdbc.url">jdbc:oracle:thin:@111.1.1.235:1521:ora10g</entry>
+	<entry key="jdbc.driver">oracle.jdbc.driver.OracleDriver</entry> -->
 <!-- 	<entry key="jdbc.url">jdbc:oracle:thin:@113.11.193.242:60521:orcl</entry> -->
 <!-- 	<entry key="jdbc.driver">oracle.jdbc.driver.OracleDriver</entry> -->
 	
-	<!-- Mysql 
-	<entry key="jdbc.url">jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=UTF-8</entry>
+	<!--  Mysql  -->
+	<entry key="jdbc.url">jdbc:mysql://localhost:3306/llhua?useUnicode=true&amp;characterEncoding=UTF-8</entry>
 	<entry key="jdbc.driver">com.mysql.jdbc.Driver</entry>
-	-->
+	
 	
 	<!-- SQLServer2000 
 	<entry key="jdbc.url">jdbc:microsoft:sqlserver://localhost:1433;DatabaseName=[database]</entry>

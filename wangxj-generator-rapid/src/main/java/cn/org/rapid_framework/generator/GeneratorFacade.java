@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import cn.org.rapid_framework.generator.Generator.GeneratorModel;
 import cn.org.rapid_framework.generator.provider.db.sql.model.Sql;
@@ -161,7 +162,10 @@ public class GeneratorFacade {
     	}    
         
 		public void processByAllTable(String templateRootDir,boolean isDelete) throws Exception {
+			@SuppressWarnings("unchecked")
 			List<Table> tables = TableFactory.getInstance().getAllTables();
+			GeneratorContext.getContext().put("tables", tables);
+			@SuppressWarnings("rawtypes")
 			List exceptions = new ArrayList();
 			for(int i = 0; i < tables.size(); i++ ) {
 				try {

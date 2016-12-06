@@ -1,0 +1,23 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+  	  <groupId>net.wangxj</groupId>
+	  <artifactId>wangxj-parent</artifactId>
+	  <version>0.0.2-SNAPSHOT</version>
+  </parent>
+  
+  <groupId>${projectGroupId}</groupId>
+  <artifactId>${projectPreName}-service</artifactId>
+  <version>0.01-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  
+  
+  <modules>
+  	<module>${projectPreName}-service-dao</module>
+  	<module>${projectPreName}-service-core</module>
+  	<module>${projectPreName}-service-share-api</module>
+  	<module>${projectPreName}-service-share-impl</module>
+  	<module>${projectPreName}-service-war</module>
+  </modules>
+</project>

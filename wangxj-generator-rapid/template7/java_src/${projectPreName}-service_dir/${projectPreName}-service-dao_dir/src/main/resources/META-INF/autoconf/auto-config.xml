@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <group>
+        <property name="${databaseURLName}" description="数据库URL" defaultValue="${databaseURLValue}" required="true"/> 
+		<property name="${databaseUSERName}" description="连接数据库用户名" defaultValue="${databaseUSERValue}" required="true"/>		    
+		<property name="${databasePASSWORDName}" description="连接数据库密码" defaultValue="${databasePASSWORDValue}" required="true"/>				    
+		<property name="${databaseMAXACTIVEName}" description="最大连接池数量" defaultValue="${databaseMAXACTIVEValue}" required="true">
+			<validator name="number" />
+		</property>			    
+		<property name="${databaseVALIDATEQUERYName}" description="验证SQL" defaultValue="${databaseVALIDATEQUERYValue}" required="true"/>
+        <property name="${aopPOINTEXPRESSIONName}" description="事物包路径" defaultValue="${aopPOINTEXPRESSIONValue}" required="true"/>                            
+    </group>
+    <script>
+        <generate template="datasource-config.properties.vm" destfile="/config/datasource-config.properties"
+        	charset="UTF-8"/> 
+    </script>
+</config>
