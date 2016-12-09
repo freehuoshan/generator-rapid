@@ -6,11 +6,11 @@
 package ${basepackage}.po;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * created by	: ${author}
  * created time	: ${ .now?string("yyyy-MM-dd HH:mm:ss")}
- */
  */
 public class ${className}PO{
 	
@@ -18,6 +18,10 @@ public class ${className}PO{
     // ${column.columnAlias!} 	
 	private ${column.javaType} ${column.columnNameLower};
 	</#list>
+	
+	public ${className}PO(){
+		super();
+	}
 	
 	public ${className}PO(<#list table.columns as column>${column.javaType} ${column.columnNameLower}<#if column_has_next>,</#if></#list>){
 		<#list table.columns as column>	

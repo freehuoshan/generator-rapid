@@ -1,4 +1,4 @@
-package net.wangxj.ssm;
+package ${basepackage}.dto;
 
 import java.io.Serializable;
 import java.util.List;

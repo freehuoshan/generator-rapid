@@ -20,7 +20,6 @@ import org.apache.log4j.Logger;
  * created by	: ${author}
  * created time	: ${ .now?string("yyyy-MM-dd HH:mm:ss")}
  */
- */
 
 @Repository("${classNameLower}Dao")
 public class ${className}DaoImpl extends BaseSessionDaoSupport implements ${className}Dao{

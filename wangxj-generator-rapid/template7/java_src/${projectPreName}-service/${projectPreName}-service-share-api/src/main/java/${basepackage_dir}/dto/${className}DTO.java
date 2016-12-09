@@ -11,7 +11,6 @@ import java.io.Serializable;
  * created by	: ${author}
  * created time	: ${ .now?string("yyyy-MM-dd HH:mm:ss")}
  */
- */
 
 public class ${className}DTO implements Serializable{ 
 	
@@ -19,6 +18,10 @@ public class ${className}DTO implements Serializable{
     // ${column.columnAlias!} 	
 	private ${column.javaType} ${column.columnNameLower};
 	</#list>
+	
+	public ${className}DTO(){
+		super();
+	}
 	
 	public ${className}DTO(<#list table.columns as column>${column.javaType} ${column.columnNameLower}<#if column_has_next>,</#if></#list>){
 		<#list table.columns as column>	
@@ -41,5 +44,4 @@ public class ${className}DTO implements Serializable{
 	</#list>
 </#macro>
 	
-}
 

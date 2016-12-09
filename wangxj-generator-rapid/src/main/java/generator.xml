@@ -105,8 +105,8 @@
 	<entry key="java_typemapping.java.math.BigDecimal">BigDecimal</entry>
 	<entry key="java_typemapping.java.lang.Long">Long</entry>
 	
-	<entry key="java_typemapping.java.sql.Timestamp">Date</entry>
-	<entry key="java_typemapping.java.sql.Date">Date</entry>
+	<entry key="java_typemapping.java.sql.Timestamp">java.util.Date</entry>
+	<entry key="java_typemapping.java.sql.Date">java.util.Date</entry> 
 	<!-- <entry key="java_typemapping.java.sql.Time">Date</entry>	 -->
 	<!-- <entry key="java_typemapping.java.math.BigDecimal">Long</entry> -->
 	<!-- <entry key="java_typemapping.java.sql.Clob">String</entry> -->

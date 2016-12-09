@@ -1,4 +1,4 @@
-package net.wangxj.ssm.dao.base;
+package ${basepackage}.dao.base;
 
 import java.util.List;
 
