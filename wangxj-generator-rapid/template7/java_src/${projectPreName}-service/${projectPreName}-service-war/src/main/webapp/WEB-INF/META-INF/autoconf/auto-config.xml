@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <group>
+    	<property name="${dubboAddressName}" description="dubbo注册地址" defaultValue="${dubboAddressValue}" required="true"/>
+    	<property name="${dubboApplicationName}" description="dubbo应用名" defaultValue="${dubboApplicationValue}" required="true"/>
+    	<property name="${dubboProtocolName}" description="dubbo使用协议" defaultValue="${dubboProtocolValue}" required="true"/>
+    	<property name="${dubboPortName}" description="dubbo占用端口" defaultValue="${dubbboPortValue}" required="true"/>
+    
+		<property name="${serviceLogRootName} " description="日志根路径" defaultValue="${serviceLogRootValue}" required="true"/>
+		<property name="${serviceLogNameName}" description="日志名" defaultValue=" ${serviceLogNameValue}" required="true"/>
+		<property name="${serviceLogLevelName}" description="日志级别" defaultValue="${serviceLogLevelValue}" required="true"/>
+		<property name="${serviceExceptionLogNameName}" description="异常日志名" defaultValue="${serviceExceptionLogNameValue}"/>
+		<property name="${serviceSqlLogNameName}" description="sql日志名" defaultValue="${serviceSqlLogNameValue}"/>
+		<property name="${serviceActiveMqLogName}" description="sql日志名" defaultValue="${serviceActiveMqLogNameValue}"/>
+    </group>
+    <script>
+        <generate template="service-config.properties.vm" destfile="/config/service-config.properties"
+        	charset="UTF-8"/> 
+    </script>
+</config>

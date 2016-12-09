@@ -1,0 +1,112 @@
+<#include "/macro.include"/>
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+<!-- ××××××××××××××××××××××××  定义输入开始  ×××××××××××××××××××××××× -->
+	<!-- 控制台输出 -->
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p [%c.%M(%L)] %m%n" />
+		</layout>
+	</appender>
+	<!-- 文件输出 -->
+	<appender name="ALL" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Append" value="true" />
+		<param name="File" value="<@jspEl value="${serviceLogRootName}"/>/<@jspEl value="${serviceLogNameName}"/>" />
+		<param name="encoding" value="UTF-8" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p [%c.%M(%L)] %m%n" />
+		</layout>
+	</appender>
+	<!-- 异常输出 -->
+	<appender name="EXCEPTION" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Append" value="true" />
+		<param name="File" value="<@jspEl value="${serviceLogRootName}"/>/<@jspEl value="${serviceExceptionLogNameName}"/>" />
+		<param name="encoding" value="UTF-8" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p [%c.%M(%L)] %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="ERROR" />
+            <param name="LevelMax" value="ERROR" />
+        </filter>
+	</appender>
+	<!-- SQL -->
+	<appender name="SQL" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Append" value="true" />
+		<param name="File" value="<@jspEl value="${serviceLogRootName}"/>/<@jspEl value="${serviceSqlLogNameName}"/>" />
+		<param name="encoding" value="UTF-8" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p [%c.%M(%L)] %m%n" />
+		</layout>
+	</appender>
+	<!-- activemq -->
+	<appender name="ACTIVEMQ" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Append" value="true" />
+		<param name="File" value="<@jspEl value="${serviceLogRootName}"/>/<@jspEl value="${serviceActiveMqLogName}"/>" />
+		<param name="encoding" value="UTF-8" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p [%c.%M(%L)] %m%n" />
+		</layout>
+	</appender>
+<!-- ××××××××××××××××××××××××  定义输入结束  ×××××××××××××××××××××××× -->	
+
+
+	<!-- 定义ALL -->
+	<logger name="com.huoshan" additivity="false">
+		<level value="<@jspEl value="${serviceLogLevelName}"/>" />
+		<appender-ref ref="ALL" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	<!-- 定义SQL日志 -->
+	<logger name="java.sql" additivity="false">
+		<level value="<@jspEl value="${serviceLogLevelName}"/>"/>
+		<appender-ref ref="SQL" />
+		<appender-ref ref="CONSOLE"/>
+	</logger>
+	<!-- 定义Spring日志 -->
+	<logger name="org.springframework" additivity="false">
+		<level value="<@jspEl value="${serviceLogLevelName}"/>" />
+		<appender-ref ref="ALL" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	<logger name="org.springframework.web" additivity="false">
+		<level value="<@jspEl value="${serviceLogLevelName}"/>" />
+		<appender-ref ref="ALL" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	<!-- 定义dubbo日志 -->
+	<logger name="com.alibaba.dubbo" additivity="false">
+		<level value="<@jspEl value="${serviceLogLevelName}"/>" />
+		<appender-ref ref="ALL" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	<!-- 定义sl4j日志 -->
+	<logger name="org.slf4j" additivity="false">
+		<level value="<@jspEl value="${serviceLogLevelName}"/>" />
+		<appender-ref ref="ALL" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	<!-- 定义activemq日志 -->
+	<logger name="org.apache.activemq" additivity="false">
+		<level value="<@jspEl value="${serviceLogLevelName}"/>" />
+		<appender-ref ref="ACTIVEMQ" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	<!-- 定义zookeeper日志 -->
+	<logger name="org.apache.zookeeper" additivity="false">
+		<level value="<@jspEl value="${serviceLogLevelName}"/>" />
+		<appender-ref ref="ALL" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	
+	<root>
+		<level value="<@jspEl value="${serviceLogLevelName}"/>" />
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="ALL" />
+		<appender-ref ref="EXCEPTION" />
+	</root>
+</log4j:configuration>
+

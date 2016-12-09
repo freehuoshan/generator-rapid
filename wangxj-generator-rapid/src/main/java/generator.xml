@@ -31,12 +31,47 @@
 				 
 	<entry key="aopPOINTEXPRESSIONName">aop_point_expression</entry>
 	<entry key="aopPOINTEXPRESSIONValue">aop_point_expression_value</entry>
-
+	<!-- dao层变量结束 -->
+	
+	<!-- serviceimpl变量 -->
+	
+	<entry key="dubboAddressName">dubbo_address</entry>
+	<entry key="dubboAddressValue">dubbo_address_value</entry>
+	
+	<entry key="dubboApplicationName">dubbo_application</entry>
+	<entry key="dubboApplicationValue">dubbo_application_value</entry>
+	
+	<entry key="dubboProtocolName">dubbo_protocol</entry>
+	<entry key="dubboProtocolValue">dubbo_protocol_value</entry>
+	
+	<entry key="dubboPortName">dubbo_port</entry>
+	<entry key="dubbboPortValue">dubbo_port_value</entry>
+	
+	<!-- log -->
+	<entry key="serviceLogRootName">service_log_root</entry>
+	<entry key="serviceLogRootValue">service_log_root</entry>
+	
+	<entry key="serviceLogNameName">service_log_name</entry>
+	<entry key="serviceLogNameValue">service_log_name</entry>
+	
+	<entry key="serviceLogLevelName">service_log_level</entry>
+	<entry key="serviceLogLevelValue">service_log_level</entry>
+	
+	<entry key="serviceExceptionLogNameName">service_exception_log</entry>
+	<entry key="serviceExceptionLogNameValue">service_exception_log</entry>
+	
+	<entry key="serviceSqlLogNameName">service_sql_log_name</entry>
+	<entry key="serviceSqlLogNameValue">service_sql_log_name</entry>
+	
+	<entry key="serviceActiveMqLogName">service_active_mq_log_name</entry>
+	<entry key="serviceActiveMqLogNameValue">service_active_mq_log_name</entry>
+	
+	<!-- serviceimpl变量结束 -->
 	
 	<!-- jsp namespace: web/${namespace}/${className}/list.jsp -->
 	<entry key="namespace"></entry>
 
-	<entry key="outRoot">d:/generator-output</entry>
+	<entry key="outRoot">/home/huoshan/generator-output</entry>
 	
 	<!-- 需要移除的表名前缀,使用逗号进行分隔多个前缀,示例值: t_,v_ -->
 	<entry key="tableRemovePrefixes"></entry>
@@ -69,13 +104,13 @@
 	<entry key="java_typemapping.java.lang.String">String</entry>
 	<entry key="java_typemapping.java.math.BigDecimal">BigDecimal</entry>
 	<entry key="java_typemapping.java.lang.Long">Long</entry>
-	<!-- 
-	<entry key="java_typemapping.java.sql.Timestamp">java.util.Date</entry>
-	<entry key="java_typemapping.java.sql.Date">java.util.Date</entry>
-	<entry key="java_typemapping.java.sql.Time">java.util.Date</entry>	
-	<entry key="java_typemapping.java.math.BigDecimal">Long</entry>
-	<entry key="java_typemapping.java.sql.Clob">String</entry>
-	-->
+	
+	<entry key="java_typemapping.java.sql.Timestamp">Date</entry>
+	<entry key="java_typemapping.java.sql.Date">Date</entry>
+	<!-- <entry key="java_typemapping.java.sql.Time">Date</entry>	 -->
+	<!-- <entry key="java_typemapping.java.math.BigDecimal">Long</entry> -->
+	<!-- <entry key="java_typemapping.java.sql.Clob">String</entry> -->
+	
 	 
 	<!-- Oracle		jdbc:oracle:oci:@tnsname_devdb -->
 	<!-- <entry key="jdbc.url">jdbc:oracle:thin:@111.1.1.235:1521:ora10g</entry>

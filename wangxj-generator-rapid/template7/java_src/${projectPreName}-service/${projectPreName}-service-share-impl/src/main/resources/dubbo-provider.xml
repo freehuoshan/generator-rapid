@@ -1,0 +1,23 @@
+<#include "/macro.include"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<!-- 使用zookper暴露发现服务地址 -->
+	<!-- <dubbo:registry address="zookeeper://192.168.204.133:2181" check="true" /> -->
+	 <dubbo:registry address="<@jspEl value="${dubboAddressName}"/>" check="true" />
+	<dubbo:application name="<@jspEl value="${dubboApplicationName}"/>"/>
+	<!-- 用dubbo协议在20881端口暴露服务 -->
+    <dubbo:protocol name="<@jspEl value="${dubboProtocolName}"/>" port="<@jspEl value="${dubboPortName}"/>"/>
+    
+    <!-- 需要暴露的服务接口 -->
+    <#list tables as table >
+    <dubbo:service interface="${basepackage}.service.share.${table.className}ShareService" ref="${table.className?uncap_first}"/>
+    <bean id="${table.className?uncap_first}" class="${basepackage}.service.share.impl.${table.className}ShareServiceImpl"/>
+   </#list>
+   
+</beans>
