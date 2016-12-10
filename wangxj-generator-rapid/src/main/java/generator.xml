@@ -9,62 +9,62 @@
 	<!-- 自定义变量 -->
 	<entry key="author">wangxj</entry>
 	
-	<entry key="projectPreName">template</entry>
-	<entry key="projectGroupId">net.wangxj</entry>
+	<entry key="projectPreName">aa</entry>
+	<entry key="projectGroupId">net.wangxj.blog</entry>
 	
-	<entry key="basepackage">com.kalian.security.provide</entry>
+	<entry key="basepackage">net.wangxj.blog</entry>
 	<!-- dao层变量 -->
 	<entry key="databaseURLName">database_url</entry>
-	<entry key="databaseURLValue">database_url_value</entry>
+	<entry key="databaseURLValue">jdbc:mysql://localhost:3306/llhua?useUnicode=true&amp;characterEncoding=UTF-8</entry>
 	
-	<entry key="databaseUSERName">database_user</entry>
-	<entry key="databaseUSERValue">database_user_value</entry>
+	<entry key="databaseUSERName">database_username</entry>
+	<entry key="databaseUSERValue">root</entry>
 	
-	<entry key="databasePASSWORDName">database_passwd</entry>
-	<entry key="databasePASSWORDValue">database_passwd_value</entry>
+	<entry key="databasePASSWORDName">database_password</entry>
+	<entry key="databasePASSWORDValue">llhua123</entry>
 						
 	<entry key="databaseMAXACTIVEName">database_maxActive</entry>
-	<entry key="databaseMAXACTIVEValue">database_maxActive_value</entry>
+	<entry key="databaseMAXACTIVEValue">30</entry>
 	
 	<entry key="databaseVALIDATEQUERYName">database_validateQuery</entry>
-	<entry key="databaseVALIDATEQUERYValue">database_validateQuery_value</entry>
+	<entry key="databaseVALIDATEQUERYValue">select * from user</entry>
 				 
-	<entry key="aopPOINTEXPRESSIONName">aop_point_expression</entry>
-	<entry key="aopPOINTEXPRESSIONValue">aop_point_expression_value</entry>
+	<entry key="aopPOINTEXPRESSIONName">database_aop_point_expression</entry>
+	<entry key="aopPOINTEXPRESSIONValue">execution(* net.wangxj.blog.service.share..*(..))</entry>
 	<!-- dao层变量结束 -->
 	
 	<!-- serviceimpl变量 -->
 	
 	<entry key="dubboAddressName">dubbo_address</entry>
-	<entry key="dubboAddressValue">dubbo_address_value</entry>
+	<entry key="dubboAddressValue">zookeeper://127.0.0.1:2181</entry>
 	
 	<entry key="dubboApplicationName">dubbo_application</entry>
-	<entry key="dubboApplicationValue">dubbo_application_value</entry>
+	<entry key="dubboApplicationValue">blog_service</entry>
 	
 	<entry key="dubboProtocolName">dubbo_protocol</entry>
-	<entry key="dubboProtocolValue">dubbo_protocol_value</entry>
+	<entry key="dubboProtocolValue">dubbo</entry>
 	
 	<entry key="dubboPortName">dubbo_port</entry>
-	<entry key="dubbboPortValue">dubbo_port_value</entry>
+	<entry key="dubbboPortValue">2881</entry>
 	
 	<!-- log -->
 	<entry key="serviceLogRootName">service_log_root</entry>
-	<entry key="serviceLogRootValue">service_log_root</entry>
+	<entry key="serviceLogRootValue">/home/huoshan/log</entry>
 	
 	<entry key="serviceLogNameName">service_log_name</entry>
-	<entry key="serviceLogNameValue">service_log_name</entry>
+	<entry key="serviceLogNameValue">blog_service.log</entry>
 	
 	<entry key="serviceLogLevelName">service_log_level</entry>
-	<entry key="serviceLogLevelValue">service_log_level</entry>
+	<entry key="serviceLogLevelValue">DEBUG</entry>
 	
 	<entry key="serviceExceptionLogNameName">service_exception_log</entry>
-	<entry key="serviceExceptionLogNameValue">service_exception_log</entry>
+	<entry key="serviceExceptionLogNameValue">blog_service_exception.log</entry>
 	
 	<entry key="serviceSqlLogNameName">service_sql_log_name</entry>
-	<entry key="serviceSqlLogNameValue">service_sql_log_name</entry>
+	<entry key="serviceSqlLogNameValue">blog_service_sql.log</entry>
 	
 	<entry key="serviceActiveMqLogName">service_active_mq_log_name</entry>
-	<entry key="serviceActiveMqLogNameValue">service_active_mq_log_name</entry>
+	<entry key="serviceActiveMqLogNameValue">blog_service_activemq.log</entry>
 	
 	<!-- serviceimpl变量结束 -->
 	

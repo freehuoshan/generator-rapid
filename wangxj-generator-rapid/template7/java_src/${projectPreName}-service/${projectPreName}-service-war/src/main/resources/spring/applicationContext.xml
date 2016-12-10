@@ -9,5 +9,7 @@
  	
  	<import resource="classpath*:/spring-service.xml" />
  	<import resource="classpath*:/dubbo-provider.xml" />
+ 	
+ 	<context:component-scan base-package=""/> 
   
 </beans>

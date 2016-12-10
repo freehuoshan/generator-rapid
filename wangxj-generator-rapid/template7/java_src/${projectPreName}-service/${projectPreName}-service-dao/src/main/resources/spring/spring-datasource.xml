@@ -32,7 +32,7 @@
 	<!-- DataSource定义。 -->
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" 
 		destroy-method="close"> 
-	     <property name="url"><value><@jspEl value="$databaseURLName}"/></value></property>
+	     <property name="url"><value><@jspEl value="${databaseURLName}"/></value></property>
 	     <property name="username"><value><@jspEl value="${databaseUSERName}"/></value></property>
 	     <property name="password"><value><@jspEl value="${databasePASSWORDName}"/></value></property>
 	     <property name="maxActive"><value><@jspEl value="${databaseMAXACTIVEName}"/></value></property>

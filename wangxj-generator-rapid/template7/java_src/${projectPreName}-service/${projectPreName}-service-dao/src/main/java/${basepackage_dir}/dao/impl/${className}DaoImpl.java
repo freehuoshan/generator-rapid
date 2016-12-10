@@ -48,13 +48,13 @@ public class ${className}DaoImpl extends BaseSessionDaoSupport implements ${clas
 	}
 	
 	@Override
-	public List<AuthorityResourcesPO> selectListByCondition(${className}PO ${classNameLower}Po) {
+	public List<${className}PO> selectListByCondition(${className}PO ${classNameLower}Po) {
 		
 		return super.getSqlSession().selectList("${className}POMapper.selectByCondition", ${classNameLower}Po);
 	}
 	
 	@Override
-	public List<AuthorityResourcesPO> selectPageListByCondition(${className}PO ${classNameLower}Po, int pageNum, int limit) {
+	public List<${className}PO> selectPageListByCondition(${className}PO ${classNameLower}Po, int pageNum, int limit) {
 		PageHelper.startPage(pageNum, limit);
 		return super.getSqlSession().selectList("${className}POMapper.selectByCondition", ${classNameLower}Po);
 	}

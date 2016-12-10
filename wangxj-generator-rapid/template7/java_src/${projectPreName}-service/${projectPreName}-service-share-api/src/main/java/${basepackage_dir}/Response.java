@@ -1,4 +1,4 @@
-package ${basepackage}.dto;
+package ${basepackage};
 
 import java.io.Serializable;
 import java.util.List;

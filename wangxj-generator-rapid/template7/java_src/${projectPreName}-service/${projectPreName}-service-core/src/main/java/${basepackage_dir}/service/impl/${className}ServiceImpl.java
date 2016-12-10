@@ -13,7 +13,7 @@ import javax.annotation.Resource;
 import org.apache.log4j.Logger;
 import ${basepackage}.dao.${className}Dao;
 import ${basepackage}.po.${className}PO;
-import ${basepackage}..service.${className}Service;
+import ${basepackage}.service.${className}Service;
 import org.springframework.stereotype.Service;
 
 /**
