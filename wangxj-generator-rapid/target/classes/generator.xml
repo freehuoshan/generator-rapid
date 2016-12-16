@@ -6,23 +6,112 @@
 		1.会为所有的property生成property_dir属性,如pkg=com.company => pkg_dir=com/company
 		2.可以引用环境变量: ${env.JAVA_HOME} or System.properties: ${user.home},property之间也可以相互引用
 	</comment>
+	<!-- 自定义变量 -->
+	<entry key="author">wangxj</entry>
 	
-	<entry key="basepackage">com.kalian.security.provide</entry>
+	<entry key="projectPreName">aa</entry>
+	<entry key="projectGroupId">net.wangxj.blog</entry>
+	
+	<entry key="basepackage">net.wangxj.blog</entry>
+	<!-- dao层变量 -->
+	<entry key="databaseURLName">database_url</entry>
+	<entry key="databaseURLValue">jdbc:mysql://localhost:3306/llhua?useUnicode=true&amp;characterEncoding=UTF-8</entry>
+	<entry key="compponentScanPackageName">component_scan_package</entry>
+	<entry key="compponentScanPackageValue">net.wangxj.blog</entry>
+	
+	<entry key="databaseUSERName">database_username</entry>
+	<entry key="databaseUSERValue">root</entry>
+	
+	<entry key="databasePASSWORDName">database_password</entry>
+	<entry key="databasePASSWORDValue">llhua123</entry>
+						
+	<entry key="databaseMAXACTIVEName">database_maxActive</entry>
+	<entry key="databaseMAXACTIVEValue">30</entry>
+	
+	<entry key="databaseVALIDATEQUERYName">database_validateQuery</entry>
+	<entry key="databaseVALIDATEQUERYValue">select * from user</entry>
+				 
+	<entry key="aopPOINTEXPRESSIONName">database_aop_point_expression</entry>
+	<entry key="aopPOINTEXPRESSIONValue">execution(* net.wangxj.blog.service.share..*(..))</entry>
+	<!-- dao层变量结束 -->
+	
+	<!-- serviceimpl变量 -->
+	
+	<entry key="dubboAddressName">dubbo_address</entry>
+	<entry key="dubboAddressValue">zookeeper://127.0.0.1:2181</entry>
+	
+	<entry key="dubboApplicationName">dubbo_application</entry>
+	<entry key="dubboApplicationValue">blog_service</entry>
+	
+	<entry key="dubboProtocolName">dubbo_protocol</entry>
+	<entry key="dubboProtocolValue">dubbo</entry>
+	
+	<entry key="dubboPortName">dubbo_port</entry>
+	<entry key="dubbboPortValue">2881</entry>
+	
+	<!-- log -->
+	<entry key="serviceLogRootName">service_log_root</entry>
+	<entry key="serviceLogRootValue">/home/huoshan/log</entry>
+	
+	<entry key="serviceLogNameName">service_log_name</entry>
+	<entry key="serviceLogNameValue">blog_service.log</entry>
+	
+	<entry key="serviceLogLevelName">service_log_level</entry>
+	<entry key="serviceLogLevelValue">DEBUG</entry>
+	
+	<entry key="serviceExceptionLogNameName">service_exception_log</entry>
+	<entry key="serviceExceptionLogNameValue">blog_service_exception.log</entry>
+	
+	<entry key="serviceSqlLogNameName">service_sql_log_name</entry>
+	<entry key="serviceSqlLogNameValue">blog_service_sql.log</entry>
+	
+	<entry key="serviceActiveMqLogName">service_active_mq_log_name</entry>
+	<entry key="serviceActiveMqLogNameValue">blog_service_activemq.log</entry>
+	
+	<!-- serviceimpl变量结束 -->
+	
+	<!-- web变量 -->
+	<entry key="webFreemarkerDirName">blog_freemarker_dir</entry>
+	<entry key="webFreemarkerDirValue"></entry>
+	
+	<entry key="webUploadMaxSizeName">blog_upload_maxsize</entry>
+	<entry key="webUploadMaxSizeValue">800000000</entry>
+	
+	<entry key="webUploadErrorPageName">blog_upload_errorpage</entry>
+	<entry key="webuploadErrorPageValue">error_page</entry>
+	
+	<entry key="webViewTemplateSuffixName">blog_view_template_suffix</entry>
+	<entry key="webViewTemplateSuffixValue">.ftl</entry>
+	
+	
+	<entry key="webLoggingRootName">blog_logging_root</entry>
+	<entry key="webLoggingRootValue">/home/huoshan/log</entry>
+	
+	<entry key="webLoggingNameName">blog_logging_name</entry>
+	<entry key="webLoggingNameValue">blog_web.log</entry>
+	
+	<entry key="webLoggingLevelName">blog_logging_level</entry>
+	<entry key="webLoggingLevelValue">DEBUG</entry>
+	
+	<entry key="webDubboApplicationName">dubbo_application</entry>
+	<entry key="webDubboApplicationValue">blog_web</entry>
+	
+	<!-- web变量结束 -->
 	
 	<!-- jsp namespace: web/${namespace}/${className}/list.jsp -->
 	<entry key="namespace"></entry>
 
-	<entry key="outRoot">d:/generator-output</entry>
+	<entry key="outRoot">/home/huoshan/generator-output</entry>
 	
 	<!-- 需要移除的表名前缀,使用逗号进行分隔多个前缀,示例值: t_,v_ -->
 	<entry key="tableRemovePrefixes"></entry>
 	
-	<entry key="jdbc.username">tpos</entry>
-	<entry key="jdbc.password">tpos</entry>
+	<entry key="jdbc.username">root</entry>
+	<entry key="jdbc.password">llhua123</entry>
 <!-- 	oracle需要指定jdbc.schema,并且可能要大写，其它数据库忽略此项配置  -->
-	<entry key="jdbc.schema">TPOS</entry>
+	<!-- <entry key="jdbc.schema">TPOS</entry>
 	<entry key="jdbc.catalog">TPOS</entry>
-
+ -->
 <!-- 	<entry key="jdbc.username">ysh</entry> -->
 <!-- 	<entry key="jdbc.password">ysh</entry> -->
 <!-- 	<entry key="jdbc.schema">YSH</entry> -->
@@ -45,24 +134,24 @@
 	<entry key="java_typemapping.java.lang.String">String</entry>
 	<entry key="java_typemapping.java.math.BigDecimal">BigDecimal</entry>
 	<entry key="java_typemapping.java.lang.Long">Long</entry>
-	<!-- 
+	
 	<entry key="java_typemapping.java.sql.Timestamp">java.util.Date</entry>
-	<entry key="java_typemapping.java.sql.Date">java.util.Date</entry>
-	<entry key="java_typemapping.java.sql.Time">java.util.Date</entry>	
-	<entry key="java_typemapping.java.math.BigDecimal">Long</entry>
-	<entry key="java_typemapping.java.sql.Clob">String</entry>
-	-->
+	<entry key="java_typemapping.java.sql.Date">java.util.Date</entry> 
+	<!-- <entry key="java_typemapping.java.sql.Time">Date</entry>	 -->
+	<!-- <entry key="java_typemapping.java.math.BigDecimal">Long</entry> -->
+	<!-- <entry key="java_typemapping.java.sql.Clob">String</entry> -->
+	
 	 
 	<!-- Oracle		jdbc:oracle:oci:@tnsname_devdb -->
-	<entry key="jdbc.url">jdbc:oracle:thin:@111.1.1.235:1521:ora10g</entry>
-	<entry key="jdbc.driver">oracle.jdbc.driver.OracleDriver</entry>
+	<!-- <entry key="jdbc.url">jdbc:oracle:thin:@111.1.1.235:1521:ora10g</entry>
+	<entry key="jdbc.driver">oracle.jdbc.driver.OracleDriver</entry> -->
 <!-- 	<entry key="jdbc.url">jdbc:oracle:thin:@113.11.193.242:60521:orcl</entry> -->
 <!-- 	<entry key="jdbc.driver">oracle.jdbc.driver.OracleDriver</entry> -->
 	
-	<!-- Mysql 
-	<entry key="jdbc.url">jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=UTF-8</entry>
+	<!--  Mysql  -->
+	<entry key="jdbc.url">jdbc:mysql://localhost:3306/llhua?useUnicode=true&amp;characterEncoding=UTF-8</entry>
 	<entry key="jdbc.driver">com.mysql.jdbc.Driver</entry>
-	-->
+	
 	
 	<!-- SQLServer2000 
 	<entry key="jdbc.url">jdbc:microsoft:sqlserver://localhost:1433;DatabaseName=[database]</entry>
