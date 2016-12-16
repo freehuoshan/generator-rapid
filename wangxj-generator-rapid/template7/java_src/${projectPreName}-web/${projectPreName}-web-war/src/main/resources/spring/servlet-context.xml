@@ -21,9 +21,6 @@
 		</property>
 	</bean>
  	<import resource="classpath:spring/applicationContext.xml"/>
- 	
-	<!-- 扫描路径 -->
-    <context:component-scan base-package="<@jspEl value="${compponentScanPackageName}"/>"/>
  
     <!-- 注解支持 -->
 	<mvc:annotation-driven />

@@ -37,6 +37,12 @@
 	  <artifactId>spring-context-support</artifactId>
 	  <version>4.2.5.RELEASE</version>
 	</dependency>
+	
+	<dependency>
+		<groupId>${projectGroupId}</groupId>
+		<artifactId>${projectPreName}-service-share-api</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
   </dependencies>
   
 </project>

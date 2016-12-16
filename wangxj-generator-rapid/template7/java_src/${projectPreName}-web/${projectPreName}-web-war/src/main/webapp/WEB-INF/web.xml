@@ -17,7 +17,7 @@
 
 	<context-param>
 		<param-name>log4jProperties</param-name>
-		<param-value>classpath:config/search-config.properties</param-value>
+		<param-value>classpath:config/web-config.properties</param-value>
 	</context-param>
 
 	<context-param>
@@ -86,7 +86,7 @@
   	<!-- Spring MVC配置 -->
 	<!-- ====================================== -->
 	<servlet>
-	    <servlet-name>search</servlet-name>
+	    <servlet-name>${projectPreName}</servlet-name>
 	    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 	    <init-param>
 			<param-name>contextConfigLocation</param-name>
