@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+  	 <groupId>${projectGroupId}</groupId>
+  	<artifactId>${projectPreName}-web</artifactId>
+  	<version>0.01-SNAPSHOT</version>
+  </parent>
+  <groupId>${projectGroupId}</groupId>
+  <artifactId>${projectPreName}-web-war</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <description>web端war模块</description>
+  
+  <dependencies>
+   	<dependency>
+		<groupId>${projectGroupId}</groupId>
+  		<artifactId>${projectPreName}-web-service</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>   	
+   	</dependency>
+	<!-- freemarker -->
+	<dependency>
+	  <groupId>org.freemarker</groupId>
+	  <artifactId>freemarker</artifactId>
+	  <version>2.3.23</version>
+	</dependency>
+  </dependencies>
+  
+</project>

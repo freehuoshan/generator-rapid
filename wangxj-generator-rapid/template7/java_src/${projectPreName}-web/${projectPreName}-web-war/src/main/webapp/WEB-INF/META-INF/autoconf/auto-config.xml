@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <group>
+    	<property name="${dubboAddressName}" description="dubbo注册地址" defaultValue="${dubboAddressValue}" required="true"/>
+    	<property name="${webDubboApplicationName}" description="dubbo应用名" defaultValue="${webDubboApplicationValue}" required="true"/>
+    
+		<property name="${webLoggingRootName} " description="日志根路径" defaultValue="${webLoggingRootValue}" required="true"/>
+		<property name="${webLoggingNameName}" description="日志名" defaultValue="${webLoggingNameValue}" required="true"/>
+		<property name="${webLoggingLevelName}" description="日志级别" defaultValue="${webLoggingLevelValue}" required="true"/>
+		
+		<property name="${compponentScanPackageName}" description="包扫描路径" defaultValue="${compponentScanPackageValue}"/>
+		
+		<property name="${webFreemarkerDirName}" description="freemarker模板路径" defaultValue="${webFreemarkerDirValue}"/>
+		<property name="${webUploadMaxSizeName}" description="文件上传最大限制" defaultValue="${webUploadMaxSizeValue}"/>
+    	
+    	<property name="${webUploadErrorPageName}" description="文件上传错误页面" defaultValue="${webuploadErrorPageValue}"/>
+    	<property name="${webViewTemplateSuffixName}" description="模板后缀" defaultValue="${webViewTemplateSuffixValue}"/>
+    </group>
+    <script>
+        <generate template="web-config.properties.vm" destfile="/config/service-config.properties"
+        	charset="UTF-8"/> 
+    </script>
+</config>

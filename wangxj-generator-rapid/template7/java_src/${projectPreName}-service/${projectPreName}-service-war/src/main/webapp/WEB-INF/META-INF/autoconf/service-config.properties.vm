@@ -11,3 +11,4 @@ ${serviceLogLevelName} 			= <@jspEl value="${serviceLogLevelName}"/>
 ${serviceExceptionLogNameName} 	= <@jspEl value="${serviceExceptionLogNameName}"/>
 ${serviceSqlLogNameName}		= <@jspEl value="${serviceSqlLogNameName}"/>
 ${serviceActiveMqLogName}	= <@jspEl value="${serviceActiveMqLogName}"/>
+${compponentScanPackageName} =<@jspEl value="${compponentScanPackageName}"/>

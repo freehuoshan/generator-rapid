@@ -16,6 +16,8 @@
 	<!-- dao层变量 -->
 	<entry key="databaseURLName">database_url</entry>
 	<entry key="databaseURLValue">jdbc:mysql://localhost:3306/llhua?useUnicode=true&amp;characterEncoding=UTF-8</entry>
+	<entry key="compponentScanPackageName">component_scan_package</entry>
+	<entry key="compponentScanPackageValue">net.wangxj.blog</entry>
 	
 	<entry key="databaseUSERName">database_username</entry>
 	<entry key="databaseUSERValue">root</entry>
@@ -67,6 +69,34 @@
 	<entry key="serviceActiveMqLogNameValue">blog_service_activemq.log</entry>
 	
 	<!-- serviceimpl变量结束 -->
+	
+	<!-- web变量 -->
+	<entry key="webFreemarkerDirName">blog_freemarker_dir</entry>
+	<entry key="webFreemarkerDirValue"></entry>
+	
+	<entry key="webUploadMaxSizeName">blog_upload_maxsize</entry>
+	<entry key="webUploadMaxSizeValue">800000000</entry>
+	
+	<entry key="webUploadErrorPageName">blog_upload_errorpage</entry>
+	<entry key="webuploadErrorPageValue">error_page</entry>
+	
+	<entry key="webViewTemplateSuffixName">blog_view_template_suffix</entry>
+	<entry key="webViewTemplateSuffixValue">.ftl</entry>
+	
+	
+	<entry key="webLoggingRootName">blog_logging_root</entry>
+	<entry key="webLoggingRootValue">/home/huoshan/log</entry>
+	
+	<entry key="webLoggingNameName">blog_logging_name</entry>
+	<entry key="webLoggingNameValue">blog_web.log</entry>
+	
+	<entry key="webLoggingLevelName">blog_logging_level</entry>
+	<entry key="webLoggingLevelValue">DEBUG</entry>
+	
+	<entry key="webDubboApplicationName">dubbo_application</entry>
+	<entry key="webDubboApplicationValue">blog_web</entry>
+	
+	<!-- web变量结束 -->
 	
 	<!-- jsp namespace: web/${namespace}/${className}/list.jsp -->
 	<entry key="namespace"></entry>

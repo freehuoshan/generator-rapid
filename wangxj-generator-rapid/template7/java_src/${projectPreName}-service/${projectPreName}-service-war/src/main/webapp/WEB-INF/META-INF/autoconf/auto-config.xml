@@ -12,6 +12,8 @@
 		<property name="${serviceExceptionLogNameName}" description="异常日志名" defaultValue="${serviceExceptionLogNameValue}"/>
 		<property name="${serviceSqlLogNameName}" description="sql日志名" defaultValue="${serviceSqlLogNameValue}"/>
 		<property name="${serviceActiveMqLogName}" description="sql日志名" defaultValue="${serviceActiveMqLogNameValue}"/>
+    	
+    	<property name="${compponentScanPackageName}" description="自动注入包扫描路径" defaultValue="${compponentScanPackageValue}"/>
     </group>
     <script>
         <generate template="service-config.properties.vm" destfile="/config/service-config.properties"

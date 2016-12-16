@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- 控制台输出 -->
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p [%c.%M(%L)] %m%n" />
+		</layout>
+	</appender>
+	<!-- 文件输出 -->
+	<appender name="ALL" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Append" value="true" />
+		<param name="File" value="<@jspEl value="${webLoggingRootName}"/>/<@jspEl value="${webLoggingNameName}"/>" />
+		<param name="encoding" value="UTF-8" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p [%c.%M(%L)] %m%n" />
+		</layout>
+	</appender>
+	
+	<!-- 定义ALL -->
+	<logger name="com.huoshan" additivity="false">
+		<level value="<@jspEl value="${webLoggingLevelName}"/>" />
+		<appender-ref ref="ALL" />
+	</logger>
+
+	<!-- 定义Spring日志 -->
+	<logger name="org.springframework" additivity="false">
+		<level value="<@jspEl value="${webLoggingLevelName}"/>" />
+		<appender-ref ref="ALL" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+
+	<root>
+		<level value="<@jspEl value="${webLoggingLevelName}"/>" />
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="ALL" />
+	</root>
+</log4j:configuration>
