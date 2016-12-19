@@ -24,6 +24,12 @@
 	  <artifactId>freemarker</artifactId>
 	  <version>2.3.23</version>
 	</dependency>
+	
+	<dependency>
+		 <groupId>${projectGroupId}</groupId>
+		 <artifactId>${projectPreName}-web-resources</artifactId>
+		 <version>0.01-SNAPSHOT</version>
+	</dependency>
   </dependencies>
   
 </project>

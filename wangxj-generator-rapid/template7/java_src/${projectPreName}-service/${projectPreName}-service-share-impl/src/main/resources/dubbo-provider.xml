@@ -16,8 +16,8 @@
     
     <!-- 需要暴露的服务接口 -->
     <#list tables as table >
-    <dubbo:service interface="${basepackage}.service.share.${table.className}ShareService" ref="${table.className?uncap_first}"/>
-    <bean id="${table.className?uncap_first}" class="${basepackage}.service.share.impl.${table.className}ShareServiceImpl"/>
+    <bean id="${table.className?uncap_first}ShareService" class="${basepackage}.service.share.impl.${table.className}ShareServiceImpl"/>
+    <dubbo:service interface="${basepackage}.service.share.${table.className}ShareService" ref="${table.className?uncap_first}ShareService"/>
    </#list>
    
 </beans>

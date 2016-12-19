@@ -12,7 +12,7 @@
  	<dubbo:application name="<@jspEl value="${webDubboApplicationName}"/>"/>
  	
     <#list tables as table>
-    <dubbo:reference id="${table.className?uncap_first}" interface="${basepackage}.service.share.${table.className}ShareService" />
+    <dubbo:reference id="${table.className?uncap_first}ShareService" interface="${basepackage}.service.share.${table.className}ShareService" />
     
 	</#list>
 </beans>

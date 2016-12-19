@@ -14,6 +14,30 @@
   <description>web端service模块</description>
   
   <dependencies>
+  <!-- dubbo依赖 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>2.5.3</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+			<version>3.4.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.sgroschupf</groupId>
+			<artifactId>zkclient</artifactId>
+			<version>0.1</version>
+		</dependency>
+		<!-- dubbo依赖结束 -->
+  
     <!-- 工具包 -->
     <dependency>
 	  <groupId>com.huoshan.util</groupId>
@@ -41,7 +65,7 @@
 	<dependency>
 		<groupId>${projectGroupId}</groupId>
 		<artifactId>${projectPreName}-service-share-api</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.01-SNAPSHOT</version>
 	</dependency>
   </dependencies>
   
