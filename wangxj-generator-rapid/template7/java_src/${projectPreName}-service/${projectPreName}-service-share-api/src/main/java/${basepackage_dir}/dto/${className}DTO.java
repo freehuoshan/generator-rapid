@@ -30,6 +30,9 @@ public class ${className}DTO implements Serializable{
 	}
 
 	<@generateJavaColumns/>
+	
+	<@generateTostring clazzName="${className}"/>
+	
 }
 
 <#macro generateJavaColumns>
@@ -43,5 +46,7 @@ public class ${className}DTO implements Serializable{
 	}
 	</#list>
 </#macro>
+
+
 	
 

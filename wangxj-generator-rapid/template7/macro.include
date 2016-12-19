@@ -22,3 +22,11 @@
 	}
 
 </#macro>
+
+<#-- 生成tostring()方法 -->
+<#macro generateTostring clazzName>
+	public String toString(){
+		return "${clazzName} [<#list table.columns as column><#if column_index==0>${column.columnNameLower}="+${column.columnNameLower}+<#else>", ${column.columnNameLower}="+${column.columnNameLower}+</#if></#list>"]";
+	}
+</#macro>
+
