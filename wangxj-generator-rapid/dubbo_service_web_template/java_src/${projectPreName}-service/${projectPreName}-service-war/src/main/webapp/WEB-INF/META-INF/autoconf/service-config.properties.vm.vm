@@ -1,0 +1,14 @@
+<#include "/macro.include"/>
+
+${dubboAddressName}	  = <@jspEl value="${dubboAddressName?replace('.','_')}"/>
+${dubboApplicationName}	  = <@jspEl value="${dubboApplicationName?replace('.','_')}"/>
+${dubboProtocolName}			  = <@jspEl value="${dubboProtocolName?replace('.','_')}"/>
+${dubboPortName}				  = <@jspEl value="${dubboPortName?replace('.','_')}"/>
+
+${serviceLogRootName}  			= <@jspEl value="${serviceLogRootName?replace('.','_')}"/>
+${serviceLogNameName}  			= <@jspEl value="${serviceLogNameName?replace('.','_')}"/>
+${serviceLogLevelName} 			= <@jspEl value="${serviceLogLevelName?replace('.','_')}"/>
+${serviceExceptionLogNameName} 	= <@jspEl value="${serviceExceptionLogNameName?replace('.','_')}"/>
+${serviceSqlLogNameName}		= <@jspEl value="${serviceSqlLogNameName?replace('.','_')}"/>
+${serviceActiveMqLogName}	= <@jspEl value="${serviceActiveMqLogName?replace('.','_')}"/>
+${compponentScanPackageName} =<@jspEl value="${compponentScanPackageName?replace('.','_')}"/>

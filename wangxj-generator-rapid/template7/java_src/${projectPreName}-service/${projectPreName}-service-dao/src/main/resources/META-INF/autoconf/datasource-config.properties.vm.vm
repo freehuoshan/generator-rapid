@@ -1,8 +1,0 @@
-<#include "/macro.include"/>
-${databaseURLName}			   	=<@jspEl value="${databaseURLName}"/>						    
-${databaseUSERName}			   	=<@jspEl value="${databaseUSERName}"/>							    
-${databasePASSWORDName}		   	=<@jspEl value="${databasePASSWORDName}"/>						    
-${databaseMAXACTIVEName}	   	=<@jspEl value="${databaseMAXACTIVEName}"/>			    
-${databaseVALIDATEQUERYName}   	=<@jspEl value="${databaseVALIDATEQUERYName}"/>				
-                                                            
-${aopPOINTEXPRESSIONName}		=<@jspEl value="${aopPOINTEXPRESSIONName}"/>	

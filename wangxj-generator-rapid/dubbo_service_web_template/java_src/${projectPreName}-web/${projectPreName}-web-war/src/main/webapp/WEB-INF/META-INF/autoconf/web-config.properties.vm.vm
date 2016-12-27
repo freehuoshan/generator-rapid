@@ -1,0 +1,15 @@
+<#include "/macro.include"/>
+
+${dubboAddressName}	  = <@jspEl value="${dubboAddressName?replace('.','_')}"/>
+${webDubboApplicationName}	  = <@jspEl value="${webDubboApplicationName?replace('.','_')}"/>
+
+${compponentScanPackageName}			  = <@jspEl value="${compponentScanPackageName?replace('.','_')}"/>
+
+${webLoggingRootName}  			= <@jspEl value="${webLoggingRootName?replace('.','_')}"/>
+${webLoggingNameName}  			= <@jspEl value="${webLoggingNameName?replace('.','_')}"/>
+${webLoggingLevelName} 			= <@jspEl value="${webLoggingLevelName?replace('.','_')}"/>
+
+${webFreemarkerDirName} 	= <@jspEl value="${webFreemarkerDirName?replace('.','_')}"/>
+${webUploadMaxSizeName}		= <@jspEl value="${webUploadMaxSizeName?replace('.','_')}"/>
+${webUploadErrorPageName}	= <@jspEl value="${webUploadErrorPageName?replace('.','_')}"/>
+${webViewTemplateSuffixName} =<@jspEl value="${webViewTemplateSuffixName?replace('.','_')}"/>

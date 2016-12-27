@@ -1,0 +1,8 @@
+<#include "/macro.include"/>
+${databaseURLName}			   	=<@jspEl value="${databaseURLName?replace('.','_')}"/>						    
+${databaseUSERName}			   	=<@jspEl value="${databaseUSERName?replace('.','_')}"/>							    
+${databasePASSWORDName}		   	=<@jspEl value="${databasePASSWORDName?replace('.','_')}"/>						    
+${databaseMAXACTIVEName}	   	=<@jspEl value="${databaseMAXACTIVEName?replace('.','_')}"/>			    
+${databaseVALIDATEQUERYName}   	=<@jspEl value="${databaseVALIDATEQUERYName?replace('.','_')}"/>				
+                                                            
+${aopPOINTEXPRESSIONName}		=<@jspEl value="${aopPOINTEXPRESSIONName?replace('.','_')}"/>	

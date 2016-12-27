@@ -9,92 +9,92 @@
 	<!-- 自定义变量 -->
 	<entry key="author">wangxj</entry>
 	
-	<entry key="projectPreName">aa</entry>
-	<entry key="projectGroupId">net.wangxj.blog</entry>
+	<entry key="projectPreName">authority</entry>
+	<entry key="projectGroupId">net.wangxj.authority</entry>
 	
-	<entry key="basepackage">net.wangxj.blog</entry>
+	<entry key="basepackage">net.wangxj.authority</entry>
 	<!-- dao层变量 -->
-	<entry key="databaseURLName">database_url</entry>
-	<entry key="databaseURLValue">jdbc:mysql://localhost:3306/llhua?useUnicode=true&amp;characterEncoding=UTF-8</entry>
-	<entry key="compponentScanPackageName">component_scan_package</entry>
-	<entry key="compponentScanPackageValue">net.wangxj.blog</entry>
+	<entry key="databaseURLName">database.url</entry>
+	<entry key="databaseURLValue">jdbc:mysql://localhost:3306/authority?useUnicode=true&amp;characterEncoding=UTF-8</entry>
+	<entry key="compponentScanPackageName">component.scan.package</entry>
+	<entry key="compponentScanPackageValue">net.wangxj.authority</entry>
 	
-	<entry key="databaseUSERName">database_username</entry>
+	<entry key="databaseUSERName">database.username</entry>
 	<entry key="databaseUSERValue">root</entry>
 	
-	<entry key="databasePASSWORDName">database_password</entry>
+	<entry key="databasePASSWORDName">database.password</entry>
 	<entry key="databasePASSWORDValue">llhua123</entry>
 						
-	<entry key="databaseMAXACTIVEName">database_maxActive</entry>
+	<entry key="databaseMAXACTIVEName">database.maxActive</entry>
 	<entry key="databaseMAXACTIVEValue">30</entry>
 	
-	<entry key="databaseVALIDATEQUERYName">database_validateQuery</entry>
+	<entry key="databaseVALIDATEQUERYName">database.validateQuery</entry>
 	<entry key="databaseVALIDATEQUERYValue">select * from user</entry>
 				 
-	<entry key="aopPOINTEXPRESSIONName">database_aop_point_expression</entry>
-	<entry key="aopPOINTEXPRESSIONValue">execution(* net.wangxj.blog.service.share..*(..))</entry>
+	<entry key="aopPOINTEXPRESSIONName">database.aop.point.expression</entry>
+	<entry key="aopPOINTEXPRESSIONValue">execution(* net.wangxj.authority.service..*(..))</entry>
 	<!-- dao层变量结束 -->
 	
 	<!-- serviceimpl变量 -->
 	
-	<entry key="dubboAddressName">dubbo_address</entry>
+	<entry key="dubboAddressName">dubbo.address</entry>
 	<entry key="dubboAddressValue">zookeeper://127.0.0.1:2181</entry>
 	
-	<entry key="dubboApplicationName">dubbo_application</entry>
-	<entry key="dubboApplicationValue">blog_service</entry>
+	<entry key="dubboApplicationName">dubbo.application</entry>
+	<entry key="dubboApplicationValue">authority_service</entry>
 	
-	<entry key="dubboProtocolName">dubbo_protocol</entry>
+	<entry key="dubboProtocolName">dubbo.protocol</entry>
 	<entry key="dubboProtocolValue">dubbo</entry>
 	
-	<entry key="dubboPortName">dubbo_port</entry>
+	<entry key="dubboPortName">dubbo.port</entry>
 	<entry key="dubbboPortValue">2881</entry>
 	
 	<!-- log -->
-	<entry key="serviceLogRootName">service_log_root</entry>
+	<entry key="serviceLogRootName">authority.service.log.root</entry>
 	<entry key="serviceLogRootValue">/home/huoshan/log</entry>
 	
-	<entry key="serviceLogNameName">service_log_name</entry>
-	<entry key="serviceLogNameValue">blog_service.log</entry>
+	<entry key="serviceLogNameName">authority.service.log.name</entry>
+	<entry key="serviceLogNameValue">authority_service.log</entry>
 	
-	<entry key="serviceLogLevelName">service_log_level</entry>
+	<entry key="serviceLogLevelName">authority.service.log.level</entry>
 	<entry key="serviceLogLevelValue">DEBUG</entry>
 	
-	<entry key="serviceExceptionLogNameName">service_exception_log</entry>
-	<entry key="serviceExceptionLogNameValue">blog_service_exception.log</entry>
+	<entry key="serviceExceptionLogNameName">authority.service.exception.log</entry>
+	<entry key="serviceExceptionLogNameValue">authority_service_exception.log</entry>
 	
-	<entry key="serviceSqlLogNameName">service_sql_log_name</entry>
-	<entry key="serviceSqlLogNameValue">blog_service_sql.log</entry>
+	<entry key="serviceSqlLogNameName">authority.service.sql.log.name</entry>
+	<entry key="serviceSqlLogNameValue">authority_service_sql.log</entry>
 	
-	<entry key="serviceActiveMqLogName">service_active_mq_log_name</entry>
-	<entry key="serviceActiveMqLogNameValue">blog_service_activemq.log</entry>
+	<entry key="serviceActiveMqLogName">authority.service.active.mq.log.name</entry>
+	<entry key="serviceActiveMqLogNameValue">authority_service_activemq.log</entry>
 	
 	<!-- serviceimpl变量结束 -->
 	
 	<!-- web变量 -->
-	<entry key="webFreemarkerDirName">blog_freemarker_dir</entry>
+	<entry key="webFreemarkerDirName">authority.web.freemarker.dir</entry>
 	<entry key="webFreemarkerDirValue"></entry>
 	
-	<entry key="webUploadMaxSizeName">blog_upload_maxsize</entry>
+	<entry key="webUploadMaxSizeName">authority.web.upload.maxsize</entry>
 	<entry key="webUploadMaxSizeValue">800000000</entry>
 	
-	<entry key="webUploadErrorPageName">blog_upload_errorpage</entry>
+	<entry key="webUploadErrorPageName">authority.web.upload.errorpage</entry>
 	<entry key="webuploadErrorPageValue">error_page</entry>
 	
-	<entry key="webViewTemplateSuffixName">blog_view_template_suffix</entry>
+	<entry key="webViewTemplateSuffixName">authority.web.view.template.suffix</entry>
 	<entry key="webViewTemplateSuffixValue">.ftl</entry>
 	
 	
-	<entry key="webLoggingRootName">blog_logging_root</entry>
+	<entry key="webLoggingRootName">authority.web.logging.root</entry>
 	<entry key="webLoggingRootValue">/home/huoshan/log</entry>
 	
-	<entry key="webLoggingNameName">blog_logging_name</entry>
-	<entry key="webLoggingNameValue">blog_web.log</entry>
+	<entry key="webLoggingNameName">authority.web.logging.name</entry>
+	<entry key="webLoggingNameValue">authority_web.log</entry>
 	
-	<entry key="webLoggingLevelName">blog_logging_level</entry>
+	<entry key="webLoggingLevelName">authority.logging.level</entry>
 	<entry key="webLoggingLevelValue">DEBUG</entry>
 	
-	<entry key="webDubboApplicationName">dubbo_application</entry>
-	<entry key="webDubboApplicationValue">blog_web</entry>
+	<entry key="webDubboApplicationName">dubbo.application</entry>
+	<entry key="webDubboApplicationValue">authority_web</entry>
 	
 	<!-- web变量结束 -->
 	
@@ -149,7 +149,7 @@
 <!-- 	<entry key="jdbc.driver">oracle.jdbc.driver.OracleDriver</entry> -->
 	
 	<!--  Mysql  -->
-	<entry key="jdbc.url">jdbc:mysql://localhost:3306/llhua?useUnicode=true&amp;characterEncoding=UTF-8</entry>
+	<entry key="jdbc.url">jdbc:mysql://localhost:3306/authority?useUnicode=true&amp;characterEncoding=UTF-8</entry>
 	<entry key="jdbc.driver">com.mysql.jdbc.Driver</entry>
 	
 	
